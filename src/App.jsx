@@ -498,14 +498,14 @@ export default function Portfolio() {
               Vietnam National University · Computer Networking & Data Communications (High Quality)
             </div>
           </div>
-          <div className="edu-gpa" style={{
+          {/* <div className="edu-gpa" style={{
             marginLeft: "auto",
             background: "#00ff9d22", border: "1px solid #00ff9d44",
             padding: "10px 22px", borderRadius: "6px", textAlign: "center",
           }}>
-            {/* <div style={{ fontSize: "1.5rem", fontWeight: 700, color: "#00ff9d", fontFamily: "'Space Grotesk', sans-serif" }}>3.34</div> */}
+            <div style={{ fontSize: "1.5rem", fontWeight: 700, color: "#00ff9d", fontFamily: "'Space Grotesk', sans-serif" }}>3.34</div>
             <div style={{ fontSize: "0.6rem", color: "#445", letterSpacing: "0.1em" }}>GPA</div>
-          </div>
+          </div> */}
         </div>
 
         {EXPERIENCES.map((exp, i) => (
