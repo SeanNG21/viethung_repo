@@ -426,7 +426,7 @@ export default function Portfolio() {
             </div>
 
             <div className="stats-row" style={{ display: "flex", gap: "3rem", flexWrap: "wrap" }}>
-              {[["3.34", "GPA"], ["1+ yr", "Experience"], ["4+", "Projects"]].map(([val, label]) => (
+              {[ ["1+ yr", "Experience"], ["4+", "Projects"]].map(([val, label]) => (
                 <div key={label}>
                   <div style={{ fontSize: "clamp(1.3rem,4vw,1.7rem)", fontWeight: 700, color: "#00ff9d", fontFamily: "'Space Grotesk', sans-serif" }}>{val}</div>
                   <div style={{ fontSize: "0.62rem", color: "#445", letterSpacing: "0.15em", textTransform: "uppercase" }}>{label}</div>
@@ -503,7 +503,7 @@ export default function Portfolio() {
             background: "#00ff9d22", border: "1px solid #00ff9d44",
             padding: "10px 22px", borderRadius: "6px", textAlign: "center",
           }}>
-            <div style={{ fontSize: "1.5rem", fontWeight: 700, color: "#00ff9d", fontFamily: "'Space Grotesk', sans-serif" }}>3.34</div>
+            {/* <div style={{ fontSize: "1.5rem", fontWeight: 700, color: "#00ff9d", fontFamily: "'Space Grotesk', sans-serif" }}>3.34</div> */}
             <div style={{ fontSize: "0.6rem", color: "#445", letterSpacing: "0.1em" }}>GPA</div>
           </div>
         </div>
