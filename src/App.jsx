@@ -312,9 +312,9 @@ export default function Portfolio() {
         display: "flex", alignItems: "center", justifyContent: "space-between",
         height: "64px",
       }}>
-        <span style={{ color: "#00ff9d", fontWeight: 700, fontSize: "0.9rem", letterSpacing: "0.15em", flexShrink: 0 }}>
+        {/* <span style={{ color: "#00ff9d", fontWeight: 700, fontSize: "0.9rem", letterSpacing: "0.15em", flexShrink: 0 }}>
           {"<VH />"}
-        </span>
+        </span> */}
 
         {/* Desktop nav */}
         <div className="desktop-nav" style={{ display: "flex", gap: "0.5rem" }}>
