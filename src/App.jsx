@@ -1,23 +1,70 @@
 import { useState, useEffect } from "react";
 
 const SKILLS = {
-  "Programming": ["JavaScript", "NodeJS", "HTML/CSS"],
-  "Frameworks": ["NextJS", "ReactJS", "TypeScript"],
-  "Tools": ["Git", "GitHub", "Nulab", "Sentry", "Swagger", "Jenkins", "Grafana", "Ansible", "Redis", "RabbitMQ", "PostgreSQL"],
-  "DevOps": ["Docker", "CI/CD", "Monitoring", "IDS/IPS", "Antivirus", "VMware ESXi", "Prometheus"],
-  "Cloud & OS": ["Google Cloud (GCP)", "UNIX/Linux", "Ubuntu Server"],
-  "Database": ["SQL Server", "PostgreSQL"],
+  "Operating Systems": [
+    "Linux (Ubuntu/CentOS)",
+    "Windows Server"
+  ],
+  "Networking": [
+    "TCP/IP",
+    "DNS",
+    "HTTP/HTTPS",
+    "Load Balancing",
+    "Firewall",
+    "VPN",
+    "Subnetting"
+  ],
+  "Virtualization & Container": [
+    "VMware ESXi",
+    "Docker",
+    "Kubernetes"
+  ],
+  "Cloud": [
+    "AWS",
+    "Google Cloud (GCP)"
+  ],
+  "Infrastructure as Code": [
+    "Ansible",
+    "Terraform"
+  ],
+  "Monitoring & Logging": [
+    "Prometheus",
+    "Grafana",
+    "ELK Stack",
+    "Alert Manager"
+  ],
+  "CI/CD & Tools": [
+    "Git",
+    "GitHub",
+    "Bitbucket",
+    "Jenkins",
+    "Swagger"
+  ],
+  "Database": [
+    "PostgreSQL",
+    "SQL Server",
+    "Redis",
+    "RabbitMQ"
+  ],
+  "Programming & Scripting": [
+    "JavaScript",
+    "TypeScript",
+    "Node.js",
+    "React",
+    "Python",
+    "Bash Script"
+  ]
 };
 
 const EXPERIENCES = [
   {
-    role: "DevOps & System Monitoring (Junior)",
+    role: "DevOps & System Monitoring",
     company: "MPSolutions Company",
     location: "Me Tri, Ha Noi",
     period: "05/2024 – 06/2025",
     color: "#00ff9d",
     bullets: [
-      "Deployed and maintained applications on on-premises infrastructure running Ubuntu Server, handling system setup, security configurations, and service management.",
+      "Deployed and maintained applications on on-premises infrastructure running Server, handling system setup, security configurations, and service management.",
       "Utilized VMware ESXi to manage virtual servers.",
       "Designed and implemented CI/CD pipelines using Jenkins to automate build and deployment processes for backend services.",
       "Built and maintained separate environments including Testing, Staging, and Production.",
@@ -50,7 +97,7 @@ const PROJECTS = [
   },
   {
     name: "HRM360 System Infrastructure & Monitoring",
-    link: "https://hrm360.com.vn/",
+    link: null,
     tag: "Infrastructure · IDS/IPS · Monitoring",
     desc: "Complete server-side infrastructure for HRM360: centralized monitoring, alerting, database replication, security monitoring (IDS/IPS), and operational stability in a production environment.",
   },
@@ -355,7 +402,7 @@ export default function Portfolio() {
               marginBottom: "2rem",
               fontSize: "0.8rem", lineHeight: 1.8, color: "#8899aa",
             }}>
-              <span style={{ color: "#00ff9d" }}>// about.txt</span><br />
+              <span style={{ color: "#00ff9d" }}>// 01_introduction</span><br />
               Highly capable of working independently as well as collaboratively.
               Strong organizational and problem-solving skills with the ability to adapt
               quickly to changing tasks. Open-minded, receptive to feedback, growth-oriented.
@@ -394,7 +441,7 @@ export default function Portfolio() {
             animation: "float 4s ease-in-out infinite",
             flexShrink: 0,
           }}>
-            {["Docker", "Jenkins", "Grafana", "Kubernetes", "eBPF"].map((t, i) => (
+            {["Docker", "Jenkins", "Grafana", "Kubernetes", "AWS", "eBPF"].map((t, i) => (
               <div key={t} style={{
                 background: "#0a0e1a", border: "1px solid #00ff9d22",
                 padding: "5px 14px", borderRadius: "20px",
