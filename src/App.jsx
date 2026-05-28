@@ -693,7 +693,7 @@ export default function Portfolio() {
       <footer style={{ borderTop: `1px solid ${T.borderFooter}`, padding: "26px 40px", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12, position: "relative", zIndex: 1 }}>
         <div style={{ fontFamily: "'Source Serif 4', serif", fontSize: 17, fontWeight: 700, color: T.textHeading }}>NVH<span style={{ color: T.accent }}>.</span></div>
         <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 11, color: T.footerText, letterSpacing: "0.05em" }}>© 2025 Nguyễn Việt Hùng · Built with React & Framer Motion</div>
-        <a href="#home" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 11, color: T.footerLink, letterSpacing: "0.12em", textTransform: "uppercase", textDecoration: "none" }}>Back to top ↑</a>
+        <a href="#home" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 11, color: T.footerLink, letterSpacing: "0.12em", textTransform: "uppercase", textDecoration: "none" }}>Back to top ↑.</a>
       </footer>
     </div>
   );
