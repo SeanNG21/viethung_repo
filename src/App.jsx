@@ -1,50 +1,60 @@
 import { useState, useEffect } from "react";
 
 const SKILLS = {
-  "Operating Systems": [
-    "Linux (Ubuntu/CentOS)",
-    "Windows Server"
-  ],
-  "Networking": [
-    "TCP/IP",
-    "DNS",
-    "HTTP/HTTPS",
-    "Load Balancing",
-    "Firewall",
-    "VPN",
-    "Subnetting"
-  ],
-  "Virtualization & Container": [
-    "VMware ESXi",
-    "Docker",
-    "Kubernetes"
-  ],
-  "Cloud": [
-    "AWS",
-    "Google Cloud (GCP)"
-  ],
-  "Infrastructure as Code": [
+  "CI/CD & Automation": [
+    "Jenkins",
+    "GitLab CI",
     "Ansible",
-    "Terraform"
+  ],
+  "Containerization & Orchestration": [
+    "Docker",
+    "Docker Compose",
+    "Kubernetes (K8s)",
+    "Helm Chart",
+    "emissary-ingress",
+    "ArgoCD",
   ],
   "Monitoring & Logging": [
     "Prometheus",
     "Grafana",
+    "Alert Manager",
+    "Sentry",
     "ELK Stack",
-    "Alert Manager"
   ],
-  "CI/CD & Tools": [
-    "Git",
-    "GitHub",
-    "Bitbucket",
-    "Jenkins",
-    "Swagger"
+  "Infrastructure & Virtualization": [
+    "VMware ESXi",
+    "vSphere",
+    "vCenter",
   ],
-  "Database": [
+  "High Availability & Networking": [
+    "Keepalived (VRRP)",
+    "pfSense Firewall",
+    "Cloudflare",
+    "TCP/IP",
+    "DNS",
+    "Load Balancing",
+    "VPN",
+  ],
+  "Security": [
+    "IDS/IPS",
+    "Antivirus",
+    "Hardening Server",
+    "Tuning Server",
+  ],
+  "Database Administration": [
     "PostgreSQL",
+    "MariaDB Cluster",
     "SQL Server",
     "Redis",
-    "RabbitMQ"
+    "RabbitMQ",
+  ],
+  "Cloud Platforms": [
+    "AWS",
+    "Google Cloud Platform (GCP)",
+  ],
+  "AI/Automation": [
+    "AI Agent System",
+    "Automated Incident Remediation",
   ],
   "Programming & Scripting": [
     "JavaScript",
@@ -52,19 +62,42 @@ const SKILLS = {
     "Node.js",
     "React",
     "Python",
-    "Bash Script"
-  ]
+    "Bash Script",
+  ],
 };
 
 const EXPERIENCES = [
   {
-    role: "DevOps & System Monitoring",
+    role: "DevOps & System Engineer",
+    company: "PayTech JSC",
+    location: "Cau Giay, Ha Noi",
+    period: "02/2025 – Present",
+    color: "#00ff9d",
+    note: "Products: VitaPay & eMoney (Digital Wallet Applications)",
+    bullets: [
+      "Managed and maintained complete server infrastructure for VitaPay and eMoney digital wallet platforms.",
+      "Operated and optimized MariaDB cluster and PostgreSQL primary-standby cluster, including backup, restoration, and load balancing for high availability.",
+      "Designed and implemented CI/CD pipelines using Jenkins for services.",
+      "Built and maintained a centralized log server aggregating logs from all application systems for monitoring and audit purposes.",
+      "Implemented OS-level and database backups across all 3 environments (VM server, cloud, local disk) ensuring disaster recovery readiness.",
+      "Deployed centralized monitoring system (Prometheus + Grafana + Alert Manager) covering all infrastructure components and services.",
+      "Configured Keepalived (VRRP) for high availability across critical services, ensuring zero-downtime failover and continuous system operation.",
+      "Managed Cloudflare for DNS management, DDoS protection, SSL termination, and traffic proxying for wallet applications.",
+      "Managed VMware vSphere and vCenter environments for virtual machine provisioning and lifecycle management.",
+      "Collaborated with Viettel, VinaPhone, and MobiFone on VAS projects: physical server installation at telecom DCs, hardening server, and monitoring on telecom cloud environments.",
+      "Built and managed Docker and Kubernetes infrastructure for new services deployed.",
+      "Developed an AI agent system to automate incident diagnosis and remediation, significantly reducing mean time to recovery.",
+    ],
+  },
+  {
+    role: "DevOps & System admin",
     company: "MPSolutions Company",
     location: "Me Tri, Ha Noi",
     period: "05/2024 – 06/2025",
-    color: "#00ff9d",
+    color: "#00cfff",
+    note: null,
     bullets: [
-      "Deployed and maintained applications on on-premises infrastructure running Server, handling system setup, security configurations, and service management.",
+      "Deployed and maintained applications on on-premises infrastructure running Ubuntu Server, handling system setup, security configurations, and service management.",
       "Utilized VMware ESXi to manage virtual servers.",
       "Designed and implemented CI/CD pipelines using Jenkins to automate build and deployment processes for backend services.",
       "Built and maintained separate environments including Testing, Staging, and Production.",
@@ -78,7 +111,8 @@ const EXPERIENCES = [
     company: "Remote",
     location: "Remote",
     period: "03/2024 – 05/2024",
-    color: "#00cfff",
+    color: "#a78bfa",
+    note: null,
     bullets: [
       "Contributed to the development and maintenance of the Arobid web application using Next.js and TypeScript.",
       "Fixed UI and logic-related bugs to improve overall user experience and interface stability.",
@@ -97,7 +131,7 @@ const PROJECTS = [
   },
   {
     name: "HRM360 System Infrastructure & Monitoring",
-    link: null,
+    link: "https://hrm360.com.vn/",
     tag: "Infrastructure · IDS/IPS · Monitoring",
     desc: "Complete server-side infrastructure for HRM360: centralized monitoring, alerting, database replication, security monitoring (IDS/IPS), and operational stability in a production environment.",
   },
@@ -238,7 +272,6 @@ export default function Portfolio() {
         a { text-decoration:none; color:inherit; }
         a:hover { text-decoration:underline; }
 
-        /* Mobile menu */
         .mobile-menu {
           display: none;
           position: fixed; top: 64px; left: 0; width: 100%;
@@ -259,10 +292,8 @@ export default function Portfolio() {
         }
         .mob-item:hover, .mob-item.active { color:#00ff9d; background:#00ff9d08; }
 
-        /* Hamburger: hidden on desktop */
         .hamburger { display: none !important; }
 
-        /* Tablet / Mobile breakpoint */
         @media (max-width: 768px) {
           .desktop-nav   { display: none !important; }
           .hamburger     { display: flex !important; }
@@ -276,7 +307,6 @@ export default function Portfolio() {
           .stats-row     { gap: 2rem !important; }
         }
 
-        /* Small phones */
         @media (max-width: 480px) {
           .sec { padding: 4rem 1.25rem !important; }
           .hero-sec { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
@@ -312,11 +342,6 @@ export default function Portfolio() {
         display: "flex", alignItems: "center", justifyContent: "space-between",
         height: "64px",
       }}>
-        {/* <span style={{ color: "#00ff9d", fontWeight: 700, fontSize: "0.9rem", letterSpacing: "0.15em", flexShrink: 0 }}>
-          {"<VH />"}
-        </span> */}
-
-        {/* Desktop nav */}
         <div className="desktop-nav" style={{ display: "flex", gap: "0.5rem" }}>
           {navItems.map(item => (
             <button key={item} className="nav-btn" onClick={() => scrollTo(item)} style={{
@@ -331,7 +356,6 @@ export default function Portfolio() {
           ))}
         </div>
 
-        {/* Hamburger */}
         <button
           className="hamburger"
           onClick={() => setMenuOpen(v => !v)}
@@ -393,7 +417,7 @@ export default function Portfolio() {
             </h1>
 
             <div style={{ fontSize: "clamp(0.82rem, 2.5vw, 1.1rem)", color: "#6b7a99", marginBottom: "2rem", letterSpacing: "0.03em" }}>
-              <TerminalText text="DevOps Engineer · System Monitoring · Backend" speed={50} />
+              <TerminalText text="DevOps Engineer · System Admin · Infrastructure" speed={50} />
             </div>
 
             <div style={{
@@ -426,7 +450,7 @@ export default function Portfolio() {
             </div>
 
             <div className="stats-row" style={{ display: "flex", gap: "3rem", flexWrap: "wrap" }}>
-              {[ ["1+ yr", "Experience"], ["4+", "Projects"]].map(([val, label]) => (
+              {[["1+ yr", "Experience"], ["4+", "Projects"], ["2", "Companies"]].map(([val, label]) => (
                 <div key={label}>
                   <div style={{ fontSize: "clamp(1.3rem,4vw,1.7rem)", fontWeight: 700, color: "#00ff9d", fontFamily: "'Space Grotesk', sans-serif" }}>{val}</div>
                   <div style={{ fontSize: "0.62rem", color: "#445", letterSpacing: "0.15em", textTransform: "uppercase" }}>{label}</div>
@@ -435,13 +459,13 @@ export default function Portfolio() {
             </div>
           </div>
 
-          {/* Floating tags: hidden on mobile via CSS */}
+          {/* Floating tags */}
           <div className="floating-tags" style={{
             display: "flex", flexDirection: "column", gap: "0.7rem",
             animation: "float 4s ease-in-out infinite",
             flexShrink: 0,
           }}>
-            {["Docker", "Jenkins", "Grafana", "Kubernetes", "AWS", "eBPF"].map((t, i) => (
+            {["Docker", "Jenkins", "Grafana", "Kubernetes", "Cloudflare", "eBPF", "AI Agent"].map((t, i) => (
               <div key={t} style={{
                 background: "#0a0e1a", border: "1px solid #00ff9d22",
                 padding: "5px 14px", borderRadius: "20px",
@@ -498,14 +522,14 @@ export default function Portfolio() {
               Vietnam National University · Computer Networking & Data Communications (High Quality)
             </div>
           </div>
-          {/* <div className="edu-gpa" style={{
+          <div className="edu-gpa" style={{
             marginLeft: "auto",
             background: "#00ff9d22", border: "1px solid #00ff9d44",
             padding: "10px 22px", borderRadius: "6px", textAlign: "center",
           }}>
             <div style={{ fontSize: "1.5rem", fontWeight: 700, color: "#00ff9d", fontFamily: "'Space Grotesk', sans-serif" }}>3.34</div>
             <div style={{ fontSize: "0.6rem", color: "#445", letterSpacing: "0.1em" }}>GPA</div>
-          </div> */}
+          </div>
         </div>
 
         {EXPERIENCES.map((exp, i) => (
@@ -526,6 +550,11 @@ export default function Portfolio() {
                 <div style={{ fontSize: "0.73rem", color: exp.color, letterSpacing: "0.04em" }}>
                   {exp.company} · {exp.location}
                 </div>
+                {exp.note && (
+                  <div style={{ fontSize: "0.68rem", color: "#556", fontStyle: "italic", marginTop: "3px" }}>
+                    {exp.note}
+                  </div>
+                )}
               </div>
               <div style={{
                 background: `${exp.color}18`, border: `1px solid ${exp.color}44`,
