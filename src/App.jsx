@@ -674,7 +674,7 @@ export default function Portfolio() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 10 }}>
             {[
               { icon: <Mail size={15} />, label: "nguyenviethung21092003@gmail.com", href: "mailto:nguyenviethung21092003@gmail.com" },
-              { icon: <Github size={15} />, label: "SeanNG21 / GitHub", href: "https://github.com/SeanNG21/viethung_repo" },
+              { icon: <Github size={15} />, label: "SeanNG21 / GitHub", href: "https://github.com/SeanNG21" },
               { icon: <Linkedin size={15} />, label: "hungnguyen21ng", href: "https://linkedin.com/in/hungnguyen21ng" },
               { icon: <Facebook size={15} />, label: "Facebook", href: "#" },
             ].map((item, i) => (
