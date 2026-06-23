@@ -15,7 +15,7 @@ const Facebook = ({ size = 24 }) => (
 );
 
 const SKILLS = [
-  { icon: "Server",    label: "Kubernetes & Docker",           tags: ["Kubernetes", "Docker", "Helm Chart", "ArgoCD", "containerd", "emissary-ingress"] },
+  { icon: "Server",    label: "Kubernetes & Docker",           tags: ["Kubernetes", "Docker", "Helm Chart", "ArgoCD", "Vault", "containerd", "emissary-ingress"] },
   { icon: "Settings2", label: "CI/CD & Automation",            tags: ["Jenkins", "GitLab CI", "Ansible", "GitOps"] },
   { icon: "Activity",  label: "Monitoring & Logging",          tags: ["Prometheus", "Grafana", "Alert Manager", "Sentry", "ELK Stack"] },
   { icon: "Cloud",     label: "Cloud & Virtualization",        tags: ["AWS", "Google Cloud Platform", "VMware ESXi", "vSphere", "vCenter"] },
@@ -52,19 +52,19 @@ const EXPERIENCES = [
       "Managed Cloudflare for DNS management, DDoS protection, SSL termination, and traffic proxying.",
       "Managed VMware vSphere and vCenter environments for VM provisioning and lifecycle management.",
       "Collaborated with Viettel, VinaPhone, and MobiFone on VAS projects: physical server installation at telecom DCs, hardening, and monitoring on telecom cloud.",
-      "Built and managed Docker and Kubernetes infrastructure for new services.",
+      "Built and managed Docker and Kubernetes infrastructure for new services, using Helm charts, Emissary-ingress, Vault, and ArgoCD for application delivery, ingress routing, secrets management, and GitOps workflows.",
       "Developed an AI agent system to automate incident diagnosis and remediation, significantly reducing MTTR.",
     ],
   },
   {
     role: "DevOps & System Admin", company: "MPSolutions Company", location: "Me Tri, Ha Noi",
-    period: "05/2024 – 06/2025", color: "#a08060", note: null,
+    period: "05/2024 – 09/2025", color: "#a08060", note: null,
     bullets: [
       "Deployed and maintained applications on on-premises Ubuntu Server infrastructure.",
       "Utilized VMware ESXi to manage virtual servers.",
       "Designed and implemented CI/CD pipelines using Jenkins to automate build and deployment.",
       "Built and maintained Testing, Staging, and Production environments.",
-      "Managed multi-container environments with Docker and Docker Compose.",
+      "Managed multi-container environments with Docker, Docker Compose, and basic Kubernetes deployments.",
       "Set up and managed database infrastructure including backups, restoration, and load balancing.",
       "Monitored system health and performance with Prometheus and Grafana.",
     ],
@@ -460,7 +460,7 @@ export default function Portfolio() {
                   Open-minded, receptive to feedback, and growth-oriented.
                 </p>
                 <div style={{ display: "flex", gap: 28, flexWrap: "wrap" }}>
-                  {[["1+", "Year"], ["4+", "Projects"], ["2", "Companies"]].map(([val, label]) => (
+                  {[["2+", "Years"], ["4+", "Projects"], ["2", "Companies"]].map(([val, label]) => (
                     <div key={label}>
                       <div style={{ fontFamily: "'Source Serif 4', serif", fontSize: 34, fontWeight: 700, color: T.accent, lineHeight: 1 }}>{val}</div>
                       <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 10, letterSpacing: "0.16em", textTransform: "uppercase", color: T.textVeryFaint, marginTop: 5 }}>{label}</div>
@@ -546,7 +546,7 @@ export default function Portfolio() {
                 { num: 4, suffix: "+", label: "Projects" },
                 { num: 2, suffix: "",  label: "Companies" },
                 { num: 10, suffix: "+", label: "Tech Stack" },
-                { num: 1, suffix: "+ yr", label: "Experience" },
+                { num: 2, suffix: "+ yrs", label: "Experience" },
               ].map((item, i) => (
                 <div key={i} style={{ borderLeft: `2px solid ${T.borderStat}`, paddingLeft: 14 }}>
                   <div style={{ fontFamily: "'Source Serif 4', serif", fontSize: 30, fontWeight: 700, color: T.accent, lineHeight: 1 }}>
