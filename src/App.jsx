@@ -15,14 +15,14 @@ const Facebook = ({ size = 24 }) => (
 );
 
 const SKILLS = [
-  { icon: "Server",    label: "Kubernetes & Docker",           tags: ["Kubernetes", "Docker", "Helm Chart", "ArgoCD", "Vault", "containerd", "emissary-ingress"] },
-  { icon: "Settings2", label: "CI/CD & Automation",            tags: ["Jenkins", "GitLab CI", "Ansible", "GitOps"] },
-  { icon: "Activity",  label: "Monitoring & Logging",          tags: ["Prometheus", "Grafana", "Alert Manager", "Sentry", "ELK Stack"] },
-  { icon: "Cloud",     label: "Cloud & Virtualization",        tags: ["AWS", "Google Cloud Platform", "VMware ESXi", "vSphere", "vCenter"] },
-  { icon: "Database",  label: "Database Administration",       tags: ["PostgreSQL", "MariaDB Cluster", "SQL Server", "Redis", "RabbitMQ"] },
-  { icon: "Network",   label: "High Availability & Networking",tags: ["Keepalived (VRRP)", "pfSense Firewall", "Cloudflare", "TCP/IP", "DNS", "Load Balancing", "VPN"] },
-  { icon: "Shield",    label: "Security",                      tags: ["IDS/IPS", "Antivirus", "Hardening Server", "Tuning Server"] },
-  { icon: "Code2",     label: "Programming & Scripting",       tags: ["JavaScript", "TypeScript", "Node.js", "React", "Python", "Bash Script"] },
+  { icon: "Server",    label: "Kubernetes & Docker",            labelVi: "Kubernetes & Docker",             tags: ["Kubernetes", "Docker", "Helm Chart", "ArgoCD", "Vault", "containerd", "emissary-ingress"] },
+  { icon: "Settings2", label: "CI/CD & Automation",             labelVi: "CI/CD & Tự động hóa",              tags: ["Jenkins", "GitLab CI", "Ansible", "GitOps"] },
+  { icon: "Activity",  label: "Monitoring & Logging",           labelVi: "Giám sát & Nhật ký",               tags: ["Prometheus", "Grafana", "Alert Manager", "Sentry", "ELK Stack"] },
+  { icon: "Cloud",     label: "Cloud & Virtualization",         labelVi: "Đám mây & Ảo hóa",                 tags: ["AWS", "Google Cloud Platform", "VMware ESXi", "vSphere", "vCenter"] },
+  { icon: "Database",  label: "Database Administration",        labelVi: "Quản trị cơ sở dữ liệu",           tags: ["PostgreSQL", "MariaDB Cluster", "SQL Server", "Redis", "RabbitMQ"] },
+  { icon: "Network",   label: "High Availability & Networking", labelVi: "Tính sẵn sàng cao & Mạng",         tags: ["Keepalived (VRRP)", "pfSense Firewall", "Cloudflare", "TCP/IP", "DNS", "Load Balancing", "VPN"] },
+  { icon: "Shield",    label: "Security",                       labelVi: "Bảo mật",                          tags: ["IDS/IPS", "Antivirus", "Hardening Server", "Tuning Server"] },
+  { icon: "Code2",     label: "Programming & Scripting",        labelVi: "Lập trình & Viết kịch bản",        tags: ["JavaScript", "TypeScript", "Node.js", "React", "Python", "Bash Script"] },
 ];
 
 const SKILL_ICONS = {
@@ -41,6 +41,9 @@ const EXPERIENCES = [
     role: "DevOps & System Engineer", company: "PayTech JSC", location: "Cau Giay, Ha Noi",
     period: "02/2025 – Present", color: "#c6a77d",
     note: "Products: VitaPay & eMoney (Digital Wallet Applications)",
+    roleVi: "Kỹ sư DevOps & Hệ thống", locationVi: "Cầu Giấy, Hà Nội",
+    periodVi: "02/2025 – Hiện tại",
+    noteVi: "Sản phẩm: VitaPay & eMoney (Ứng dụng ví điện tử)",
     bullets: [
       "Managed and maintained complete server infrastructure for VitaPay and eMoney digital wallet platforms.",
       "Operated and optimized MariaDB cluster and PostgreSQL primary-standby cluster, including backup, restoration, and load balancing for high availability.",
@@ -55,10 +58,26 @@ const EXPERIENCES = [
       "Built and managed Docker and Kubernetes infrastructure for new services, using Helm charts, Emissary-ingress, Vault, and ArgoCD for application delivery, ingress routing, secrets management, and GitOps workflows.",
       "Developed an AI agent system to automate incident diagnosis and remediation, significantly reducing MTTR.",
     ],
+    bulletsVi: [
+      "Quản lý và duy trì toàn bộ hạ tầng máy chủ cho hai nền tảng ví điện tử VitaPay và eMoney.",
+      "Vận hành và tối ưu cụm MariaDB cùng cụm PostgreSQL primary-standby, bao gồm sao lưu, phục hồi và cân bằng tải nhằm đảm bảo tính sẵn sàng cao.",
+      "Thiết kế và triển khai pipeline CI/CD bằng Jenkins cho các dịch vụ.",
+      "Xây dựng và duy trì máy chủ nhật ký tập trung, tổng hợp log từ toàn bộ hệ thống ứng dụng.",
+      "Triển khai sao lưu hệ điều hành và cơ sở dữ liệu trên ba môi trường (máy chủ VM, cloud và ổ đĩa cục bộ), đảm bảo khả năng khôi phục sau sự cố.",
+      "Triển khai hệ thống giám sát tập trung (Prometheus + Grafana + Alert Manager) cho toàn bộ thành phần hạ tầng.",
+      "Cấu hình Keepalived (VRRP) để đảm bảo tính sẵn sàng cao, chuyển đổi dự phòng không gián đoạn và duy trì hoạt động liên tục.",
+      "Quản lý Cloudflare cho DNS, bảo vệ DDoS, kết cuối SSL và proxy lưu lượng.",
+      "Quản lý môi trường VMware vSphere và vCenter phục vụ cấp phát VM và quản lý vòng đời.",
+      "Phối hợp với Viettel, VinaPhone và MobiFone trong các dự án VAS: lắp đặt máy chủ vật lý tại DC viễn thông, gia cố bảo mật và giám sát trên cloud viễn thông.",
+      "Xây dựng và quản lý hạ tầng Docker, Kubernetes cho các dịch vụ mới bằng Helm chart, Emissary-ingress, Vault và ArgoCD để triển khai ứng dụng, định tuyến ingress, quản lý bí mật và vận hành GitOps.",
+      "Phát triển hệ thống AI agent tự động chẩn đoán và khắc phục sự cố, giúp giảm đáng kể MTTR.",
+    ],
   },
   {
     role: "DevOps & System Admin", company: "MPSolutions Company", location: "Me Tri, Ha Noi",
     period: "05/2024 – 09/2025", color: "#a08060", note: null,
+    roleVi: "DevOps & Quản trị hệ thống", locationVi: "Mễ Trì, Hà Nội",
+    periodVi: "05/2024 – 09/2025", noteVi: null,
     bullets: [
       "Deployed and maintained applications on on-premises Ubuntu Server infrastructure.",
       "Utilized VMware ESXi to manage virtual servers.",
@@ -68,15 +87,32 @@ const EXPERIENCES = [
       "Set up and managed database infrastructure including backups, restoration, and load balancing.",
       "Monitored system health and performance with Prometheus and Grafana.",
     ],
+    bulletsVi: [
+      "Triển khai và duy trì ứng dụng trên hạ tầng Ubuntu Server tại chỗ.",
+      "Sử dụng VMware ESXi để quản lý các máy chủ ảo.",
+      "Thiết kế và triển khai pipeline CI/CD bằng Jenkins để tự động hóa quá trình build và deploy.",
+      "Xây dựng và duy trì các môi trường Testing, Staging và Production.",
+      "Quản lý môi trường đa container bằng Docker, Docker Compose và các triển khai Kubernetes cơ bản.",
+      "Thiết lập và quản lý hạ tầng cơ sở dữ liệu, bao gồm sao lưu, phục hồi và cân bằng tải.",
+      "Giám sát tình trạng và hiệu năng hệ thống bằng Prometheus và Grafana.",
+    ],
   },
   {
     role: "Frontend Intern", company: "Remote", location: "Remote",
     period: "03/2024 – 05/2024", color: "#7a6a5a", note: null,
+    roleVi: "Thực tập sinh Frontend", locationVi: "Làm việc từ xa",
+    periodVi: "03/2024 – 05/2024", noteVi: null,
     bullets: [
       "Contributed to the development and maintenance of the Arobid web app using Next.js and TypeScript.",
       "Fixed UI and logic-related bugs to improve user experience and interface stability.",
       "Integrated and consumed backend APIs using Swagger for seamless data flow.",
       "Followed code standards, participated in code reviews, and continuously improved coding skills.",
+    ],
+    bulletsVi: [
+      "Tham gia phát triển và bảo trì ứng dụng web Arobid bằng Next.js và TypeScript.",
+      "Sửa lỗi giao diện và logic nhằm cải thiện trải nghiệm người dùng và độ ổn định.",
+      "Tích hợp và sử dụng API backend qua Swagger để đảm bảo luồng dữ liệu liền mạch.",
+      "Tuân thủ tiêu chuẩn mã nguồn, tham gia review code và liên tục nâng cao kỹ năng lập trình.",
     ],
   },
 ];
@@ -87,20 +123,117 @@ const PROJECTS = [
     link: "https://github.com/SeanNG21/kernel-packet-tracer/",
     tags: ["eBPF", "Kernel", "Observability", "Go"],
     desc: "A monitoring system built using eBPF to trace and visualize network packet processing inside the Linux kernel in real time, enabling low-overhead observability and deep inspection of kernel-level network behavior.",
+    nameVi: "Giám sát xử lý gói tin trong Linux Kernel",
+    descVi: "Hệ thống giám sát sử dụng eBPF để theo dõi và trực quan hóa quá trình xử lý gói tin mạng bên trong Linux kernel theo thời gian thực, mang lại khả năng quan sát với chi phí thấp và phân tích sâu hành vi mạng ở cấp kernel.",
   },
   {
     name: "Autoscaling Databases in Kubernetes",
     link: null,
     tags: ["Kubernetes", "Autoscaling", "Cost Optimization", "Helm"],
     desc: "A functionality enabling a cluster to autonomously adjust node count and allocate/deallocate pod resources based on demand, optimizing resource utilization and performance.",
+    nameVi: "Tự động mở rộng cơ sở dữ liệu trên Kubernetes",
+    descVi: "Tính năng cho phép cluster tự động điều chỉnh số lượng node, cấp phát hoặc thu hồi tài nguyên pod theo nhu cầu, qua đó tối ưu mức sử dụng tài nguyên và hiệu năng.",
   },
   {
     name: "Transportation & Delivery Website",
     link: null,
     tags: ["DMS", "Web", "Logistics", "Docker"],
     desc: "A delivery management software (DMS) for coordinating, overseeing, and executing delivery tasks efficiently across logistics operations.",
+    nameVi: "Website vận tải & giao nhận",
+    descVi: "Phần mềm quản lý giao nhận (DMS) hỗ trợ điều phối, giám sát và thực hiện hiệu quả các tác vụ giao hàng trong hoạt động logistics.",
   },
 ];
+
+const COPY = {
+  en: {
+    nav: [
+      { id: "about", label: "About" },
+      { id: "experience", label: "Experience" },
+      { id: "skills", label: "Skills" },
+      { id: "projects", label: "Projects" },
+      { id: "contact", label: "Contact" },
+    ],
+    location: "Ha Noi, Vietnam · DevOps Engineer",
+    intro: "Highly capable of working independently as well as collaboratively. Strong problem-solving skills with the ability to adapt quickly to changing tasks. Open-minded, receptive to feedback, and growth-oriented.",
+    heroStats: [["2+", "Years"], ["4+", "Projects"], ["2", "Companies"]],
+    scroll: "Scroll",
+    aboutEyebrow: "About",
+    aboutTitle: <>Engineering<br /><em>reliable</em><br />systems.</>,
+    aboutParagraphs: [
+      "I'm a DevOps & System Engineer focused on cloud-native infrastructure, Kubernetes platforms, and production-grade observability. I work across the full stack — from container orchestration and CI/CD automation to database high availability and network security.",
+      "My experience spans managing VMware vSphere environments, building centralized monitoring with Prometheus & Grafana, deploying AI-driven incident remediation systems, and collaborating with major telecom providers (Viettel, VinaPhone, MobiFone) on enterprise VAS infrastructure.",
+    ],
+    education: "Education",
+    university: "University of Engineering and Technology",
+    major: "Vietnam National University · Computer Networking & Data Communications",
+    gpa: "GPA",
+    stats: [
+      { num: 4, suffix: "+", label: "Projects" },
+      { num: 2, suffix: "", label: "Companies" },
+      { num: 10, suffix: "+", label: "Tech Stack" },
+      { num: 2, suffix: "+ yrs", label: "Experience" },
+    ],
+    career: "Career",
+    experienceTitle: <>Work <em>Experience</em></>,
+    expertise: "Expertise",
+    skillsTitle: <>Technical <em>Skills</em></>,
+    work: "Work",
+    projectsTitle: <>Selected <em>Projects</em></>,
+    projectLink: "Link",
+    contactEyebrow: "Get In Touch",
+    contactTitle: <>Let's connect<br /><em>& collaborate.</em></>,
+    contactText: "Open to DevOps roles, infrastructure consulting, and interesting cloud-native projects.",
+    footer: "© 2025 Nguyễn Việt Hùng · Built with React & Framer Motion",
+    backToTop: "Back to top ↑",
+    themeLabel: "Toggle theme",
+    languageLabel: "Chuyển sang tiếng Việt",
+    menuLabel: "Toggle navigation",
+  },
+  vi: {
+    nav: [
+      { id: "about", label: "Giới thiệu" },
+      { id: "experience", label: "Kinh nghiệm" },
+      { id: "skills", label: "Kỹ năng" },
+      { id: "projects", label: "Dự án" },
+      { id: "contact", label: "Liên hệ" },
+    ],
+    location: "Hà Nội, Việt Nam · Kỹ sư DevOps",
+    intro: "Có khả năng làm việc độc lập cũng như phối hợp nhóm hiệu quả. Kỹ năng giải quyết vấn đề tốt, thích nghi nhanh với những yêu cầu thay đổi. Luôn cởi mở, sẵn sàng tiếp nhận phản hồi và không ngừng phát triển.",
+    heroStats: [["2+", "Năm"], ["4+", "Dự án"], ["2", "Công ty"]],
+    scroll: "Cuộn xuống",
+    aboutEyebrow: "Giới thiệu",
+    aboutTitle: <>Kiến tạo<br />hệ thống <em>tin cậy.</em></>,
+    aboutParagraphs: [
+      "Tôi là Kỹ sư DevOps & Hệ thống, tập trung vào hạ tầng cloud-native, nền tảng Kubernetes và khả năng quan sát đạt chuẩn production. Công việc của tôi trải dài từ điều phối container, tự động hóa CI/CD đến đảm bảo tính sẵn sàng cao cho cơ sở dữ liệu và bảo mật mạng.",
+      "Tôi có kinh nghiệm quản lý môi trường VMware vSphere, xây dựng hệ thống giám sát tập trung với Prometheus & Grafana, triển khai hệ thống AI xử lý sự cố và phối hợp cùng các nhà mạng lớn (Viettel, VinaPhone, MobiFone) trong các dự án hạ tầng VAS doanh nghiệp.",
+    ],
+    education: "Học vấn",
+    university: "Trường Đại học Công nghệ",
+    major: "Đại học Quốc gia Hà Nội · Mạng máy tính & Truyền thông dữ liệu",
+    gpa: "Điểm GPA",
+    stats: [
+      { num: 4, suffix: "+", label: "Dự án" },
+      { num: 2, suffix: "", label: "Công ty" },
+      { num: 10, suffix: "+", label: "Công nghệ" },
+      { num: 2, suffix: "+ năm", label: "Kinh nghiệm" },
+    ],
+    career: "Sự nghiệp",
+    experienceTitle: <>Kinh nghiệm <em>làm việc</em></>,
+    expertise: "Chuyên môn",
+    skillsTitle: <>Kỹ năng <em>kỹ thuật</em></>,
+    work: "Sản phẩm",
+    projectsTitle: <>Dự án <em>tiêu biểu</em></>,
+    projectLink: "Xem",
+    contactEyebrow: "Kết nối",
+    contactTitle: <>Hãy kết nối<br /><em>& cùng hợp tác.</em></>,
+    contactText: "Sẵn sàng cho các vị trí DevOps, tư vấn hạ tầng và những dự án cloud-native thú vị.",
+    footer: "© 2025 Nguyễn Việt Hùng · Xây dựng với React & Framer Motion",
+    backToTop: "Lên đầu trang ↑",
+    themeLabel: "Chuyển giao diện sáng/tối",
+    languageLabel: "Switch to English",
+    menuLabel: "Mở hoặc đóng điều hướng",
+  },
+};
 
 function FadeUp({ children, delay = 0 }) {
   const ref = useRef(null);
@@ -136,9 +269,10 @@ export default function Portfolio() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [navScrolled, setNavScrolled] = useState(false);
-  const [dark, setDark] = useState(true);
-
-  const navItems = ["About", "Experience", "Skills", "Projects", "Contact"];
+  const [dark, setDark] = useState(false);
+  const [language, setLanguage] = useState("en");
+  const content = COPY[language];
+  const isVietnamese = language === "vi";
 
   // ─── Theme tokens ────────────────────────────────────────────────────────────
   const T = dark ? {
@@ -255,10 +389,14 @@ export default function Portfolio() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    document.documentElement.lang = language;
+  }, [language]);
+
   return (
-    <div style={{ background: T.bg, color: T.text, minHeight: "100vh", overflowX: "hidden", transition: "background 0.35s, color 0.35s" }}>
+    <div lang={language} style={{ background: T.bg, color: T.text, minHeight: "100vh", overflowX: "hidden", transition: "background 0.35s, color 0.35s" }}>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,600;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600&family=Lora:ital,wght@0,600;0,700;1,500&display=swap');
         *, *::before, *::after { box-sizing: border-box; }
         ::-webkit-scrollbar { width: 4px; }
         ::-webkit-scrollbar-track { background: ${T.scrollbarTrack}; }
@@ -274,14 +412,14 @@ export default function Portfolio() {
           opacity: ${T.grainOpacity};
         }
         .nav-link {
-          font-family: 'DM Sans', sans-serif;
+          font-family: 'Be Vietnam Pro', sans-serif;
           font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
           color: ${T.textNav}; text-decoration: none; cursor: pointer;
           transition: color 0.25s; background: none; border: none; padding: 0;
         }
         .nav-link:hover, .nav-link.active { color: ${T.accent}; }
         .tag-pill {
-          font-family: 'DM Sans', sans-serif;
+          font-family: 'Be Vietnam Pro', sans-serif;
           font-size: 11.5px; font-weight: 400; letter-spacing: 0.03em;
           padding: 4px 12px; border-radius: 100px;
           border: 1px solid ${T.tagBorder};
@@ -344,7 +482,7 @@ export default function Portfolio() {
         }
         .contact-link {
           display: flex; align-items: center; gap: 10px;
-          font-family: 'DM Sans', sans-serif; font-size: 14px;
+          font-family: 'Be Vietnam Pro', sans-serif; font-size: 14px;
           color: ${T.contactColor}; text-decoration: none;
           padding: 14px 18px; border: 1px solid ${T.contactBorder};
           border-radius: 8px; transition: border-color 0.25s, color 0.25s, background 0.25s;
@@ -358,6 +496,17 @@ export default function Portfolio() {
           transition: background 0.25s, border-color 0.25s, transform 0.2s;
         }
         .theme-toggle:hover { transform: scale(1.1); background: ${T.contactHoverBg}; }
+        .language-toggle {
+          display: flex; align-items: center; justify-content: center;
+          min-width: 42px; height: 36px; padding: 0 10px; border-radius: 18px;
+          background: ${T.toggleBg}; border: 1px solid ${T.toggleBorder};
+          cursor: pointer; color: ${T.accent};
+          font-family: 'Be Vietnam Pro', sans-serif; font-size: 11px; font-weight: 500;
+          letter-spacing: 0.08em;
+          transition: background 0.25s, border-color 0.25s, transform 0.2s;
+        }
+        .language-toggle:hover { transform: translateY(-1px); background: ${T.contactHoverBg}; }
+        .section-title em { color: ${T.accent}; }
         @media (max-width: 768px) {
           .hero-grid { grid-template-columns: 1fr !important; }
           .hero-img-col { display: none !important; }
@@ -387,27 +536,37 @@ export default function Portfolio() {
         padding: "14px 40px",
         display: "flex", alignItems: "center", justifyContent: "space-between",
       }}>
-        <div style={{ fontFamily: "'Source Serif 4', serif", fontSize: 20, fontWeight: 700, color: T.textHeading }}>
+        <div style={{ fontFamily: "'Lora', serif", fontSize: 20, fontWeight: 700, color: T.textHeading }}>
           NVH<span style={{ color: T.accent }}>.</span>
         </div>
         <div className="desktop-nav" style={{ display: "flex", gap: 32, alignItems: "center" }}>
-          {navItems.map(item => (
-            <a key={item} className={`nav-link${activeSection === item.toLowerCase() ? " active" : ""}`}
-              href={`#${item.toLowerCase()}`}>{item}</a>
+          {content.nav.map(item => (
+            <a key={item.id} className={`nav-link${activeSection === item.id ? " active" : ""}`}
+              href={`#${item.id}`}>{item.label}</a>
           ))}
+          <button className="language-toggle" onClick={() => setLanguage(isVietnamese ? "en" : "vi")}
+            aria-label={content.languageLabel} title={content.languageLabel}>
+            {isVietnamese ? "EN" : "VI"}
+          </button>
           {/* Light / Dark toggle */}
-          <button className="theme-toggle" onClick={() => setDark(!dark)} aria-label="Toggle theme">
+          <button className="theme-toggle" onClick={() => setDark(!dark)}
+            aria-label={content.themeLabel} title={content.themeLabel}>
             {dark ? <Sun size={15} /> : <Moon size={15} />}
           </button>
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+          <button className="language-toggle hamburger-btn" onClick={() => setLanguage(isVietnamese ? "en" : "vi")}
+            style={{ display: "none" }} aria-label={content.languageLabel} title={content.languageLabel}>
+            {isVietnamese ? "EN" : "VI"}
+          </button>
           {/* Mobile theme toggle */}
           <button className="theme-toggle hamburger-btn" onClick={() => setDark(!dark)}
-            style={{ display: "none" }} aria-label="Toggle theme">
+            style={{ display: "none" }} aria-label={content.themeLabel} title={content.themeLabel}>
             {dark ? <Sun size={15} /> : <Moon size={15} />}
           </button>
           <button className="hamburger-btn" onClick={() => setMenuOpen(!menuOpen)}
-            style={{ display: "none", background: "none", border: "none", color: T.textHeading, cursor: "pointer", alignItems: "center", justifyContent: "center" }}>
+            style={{ display: "none", background: "none", border: "none", color: T.textHeading, cursor: "pointer", alignItems: "center", justifyContent: "center" }}
+            aria-label={content.menuLabel}>
             {menuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
@@ -420,11 +579,11 @@ export default function Portfolio() {
             style={{ position: "fixed", top: 58, left: 0, right: 0, zIndex: 99,
               background: T.menuBg, borderBottom: `1px solid ${T.menuBorder}`,
               display: "flex", flexDirection: "column" }}>
-            {navItems.map(item => (
-              <a key={item} className="nav-link" href={`#${item.toLowerCase()}`}
+            {content.nav.map(item => (
+              <a key={item.id} className="nav-link" href={`#${item.id}`}
                 onClick={() => setMenuOpen(false)}
                 style={{ padding: "15px 24px", borderBottom: `1px solid ${T.menuItemBorder}`, fontSize: 13 }}>
-                {item}
+                {item.label}
               </a>
             ))}
           </motion.div>
@@ -437,27 +596,25 @@ export default function Portfolio() {
           <div className="hero-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }}>
             <div>
               <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55, delay: 0.15 }}>
-                <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: T.accent, marginBottom: 16 }}>
-                  Ha Noi, Vietnam · DevOps Engineer
+                <div style={{ fontFamily: "'Be Vietnam Pro', sans-serif", fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", color: T.accent, marginBottom: 16 }}>
+                  {content.location}
                 </div>
               </motion.div>
               <motion.h1 initial={{ opacity: 0, y: 26 }} animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.9, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
-                style={{ fontFamily: "'Source Serif 4', serif", fontSize: "clamp(48px, 6.5vw, 84px)", fontWeight: 700, lineHeight: 1.06, color: T.textHeading, marginTop: 0, marginBottom: 18 }}>
+                style={{ fontFamily: "'Lora', serif", fontSize: "clamp(48px, 6.5vw, 84px)", fontWeight: 700, lineHeight: 1.1, color: T.textHeading, marginTop: 0, marginBottom: 18 }}>
                 Nguyễn<br /><em style={{ color: T.accent }}>Việt Hùng</em>
               </motion.h1>
               <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.45 }}>
                 <div style={{ height: 1, width: 52, background: `linear-gradient(to right, ${T.accent}55, transparent)`, marginBottom: 18 }} />
-                <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15.5, lineHeight: 1.9, color: T.textMuted, maxWidth: 410, marginBottom: 36, marginTop: 0 }}>
-                  Highly capable of working independently as well as collaboratively.
-                  Strong problem-solving skills with the ability to adapt quickly to changing tasks.
-                  Open-minded, receptive to feedback, and growth-oriented.
+                <p style={{ fontFamily: "'Be Vietnam Pro', sans-serif", fontSize: 15, lineHeight: 1.9, color: T.textMuted, maxWidth: 430, marginBottom: 36, marginTop: 0 }}>
+                  {content.intro}
                 </p>
                 <div style={{ display: "flex", gap: 28, flexWrap: "wrap" }}>
-                  {[["2+", "Years"], ["4+", "Projects"], ["2", "Companies"]].map(([val, label]) => (
+                  {content.heroStats.map(([val, label]) => (
                     <div key={label}>
-                      <div style={{ fontFamily: "'Source Serif 4', serif", fontSize: 34, fontWeight: 700, color: T.accent, lineHeight: 1 }}>{val}</div>
-                      <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 10, letterSpacing: "0.16em", textTransform: "uppercase", color: T.textVeryFaint, marginTop: 5 }}>{label}</div>
+                      <div style={{ fontFamily: "'Lora', serif", fontSize: 34, fontWeight: 700, color: T.accent, lineHeight: 1 }}>{val}</div>
+                      <div style={{ fontFamily: "'Be Vietnam Pro', sans-serif", fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: T.textVeryFaint, marginTop: 5 }}>{label}</div>
                     </div>
                   ))}
                 </div>
@@ -488,7 +645,7 @@ export default function Portfolio() {
                   { text: "Prometheus", pos: { bottom: 90, right: -60 }, anim: "float1", dur: "7s" },
                   { text: "Jenkins",    pos: { bottom: 30, left: -44 }, anim: "float2", dur: "6.5s" },
                 ].map(({ text, pos, anim, dur }) => (
-                  <div key={text} className="glass" style={{ position: "absolute", ...pos, padding: "8px 15px", borderRadius: 8, fontFamily: "'DM Sans', sans-serif", fontSize: 12, color: T.accent, animation: `${anim} ${dur} ease-in-out infinite` }}>
+                  <div key={text} className="glass" style={{ position: "absolute", ...pos, padding: "8px 15px", borderRadius: 8, fontFamily: "'Be Vietnam Pro', sans-serif", fontSize: 12, color: T.accent, animation: `${anim} ${dur} ease-in-out infinite` }}>
                     {text}
                   </div>
                 ))}
@@ -498,7 +655,7 @@ export default function Portfolio() {
 
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }}
             style={{ position: "absolute", bottom: 32, left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}>
-            <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: T.scrollLabel }}>Scroll</span>
+            <span style={{ fontFamily: "'Be Vietnam Pro', sans-serif", fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: T.scrollLabel }}>{content.scroll}</span>
             <motion.div animate={{ y: [0, 5, 0] }} transition={{ repeat: Infinity, duration: 1.6 }}>
               <ChevronDown size={14} style={{ color: T.scrollChevron }} />
             </motion.div>
@@ -510,43 +667,36 @@ export default function Portfolio() {
       <section id="about" style={{ padding: "110px 40px", maxWidth: 1200, margin: "0 auto", position: "relative", zIndex: 1 }}>
         <div className="about-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1.6fr", gap: 80, alignItems: "start" }}>
           <FadeUp>
-            <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: T.accent, marginBottom: 14 }}>About</div>
-            <h2 style={{ fontFamily: "'Source Serif 4', serif", fontSize: "clamp(34px, 4vw, 56px)", fontWeight: 700, color: T.textHeading, lineHeight: 1.1, margin: 0 }}>
-              Engineering<br /><em style={{ color: T.accent }}>reliable</em><br />systems.
+            <div style={{ fontFamily: "'Be Vietnam Pro', sans-serif", fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", color: T.accent, marginBottom: 14 }}>{content.aboutEyebrow}</div>
+            <h2 className="section-title" style={{ fontFamily: "'Lora', serif", fontSize: "clamp(34px, 4vw, 56px)", fontWeight: 700, color: T.textHeading, lineHeight: 1.15, margin: 0 }}>
+              {content.aboutTitle}
             </h2>
           </FadeUp>
           <FadeUp delay={0.18}>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15.5, lineHeight: 1.9, color: T.textMuted, marginBottom: 18, marginTop: 0 }}>
-              I'm a DevOps & System Engineer focused on cloud-native infrastructure, Kubernetes platforms, and production-grade observability.
-              I work across the full stack — from container orchestration and CI/CD automation to database high availability and network security.
+            <p style={{ fontFamily: "'Be Vietnam Pro', sans-serif", fontSize: 15, lineHeight: 1.9, color: T.textMuted, marginBottom: 18, marginTop: 0 }}>
+              {content.aboutParagraphs[0]}
             </p>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15.5, lineHeight: 1.9, color: T.textMuted, marginBottom: 36, marginTop: 0 }}>
-              My experience spans managing VMware vSphere environments, building centralized monitoring with Prometheus & Grafana,
-              deploying AI-driven incident remediation systems, and collaborating with major telecom providers (Viettel, VinaPhone, MobiFone) on enterprise VAS infrastructure.
+            <p style={{ fontFamily: "'Be Vietnam Pro', sans-serif", fontSize: 15, lineHeight: 1.9, color: T.textMuted, marginBottom: 36, marginTop: 0 }}>
+              {content.aboutParagraphs[1]}
             </p>
             <div style={{ background: T.bgEdu, border: `1px solid ${T.borderEdu}`, borderRadius: 10, padding: "18px 22px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 16, flexWrap: "wrap", marginBottom: 28 }}>
               <div>
-                <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 10, letterSpacing: "0.16em", textTransform: "uppercase", color: T.accent, marginBottom: 6 }}>Education</div>
-                <div style={{ fontFamily: "'Source Serif 4', serif", fontSize: 15.5, fontWeight: 600, color: T.textHeading }}>University of Engineering and Technology</div>
-                <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 12.5, color: T.textVeryFaint, marginTop: 4 }}>Vietnam National University · Computer Networking & Data Communications</div>
+                <div style={{ fontFamily: "'Be Vietnam Pro', sans-serif", fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: T.accent, marginBottom: 6 }}>{content.education}</div>
+                <div style={{ fontFamily: "'Lora', serif", fontSize: 15.5, fontWeight: 600, color: T.textHeading }}>{content.university}</div>
+                <div style={{ fontFamily: "'Be Vietnam Pro', sans-serif", fontSize: 12.5, color: T.textVeryFaint, marginTop: 4 }}>{content.major}</div>
               </div>
               <div style={{ textAlign: "center", flexShrink: 0 }}>
-                <div style={{ fontFamily: "'Source Serif 4', serif", fontSize: 30, fontWeight: 700, color: T.accent, lineHeight: 1 }}>3.34</div>
-                <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 9.5, letterSpacing: "0.12em", textTransform: "uppercase", color: T.textVeryFaint, marginTop: 3 }}>GPA</div>
+                <div style={{ fontFamily: "'Lora', serif", fontSize: 30, fontWeight: 700, color: T.accent, lineHeight: 1 }}>3.34</div>
+                <div style={{ fontFamily: "'Be Vietnam Pro', sans-serif", fontSize: 9.5, letterSpacing: "0.1em", textTransform: "uppercase", color: T.textVeryFaint, marginTop: 3 }}>{content.gpa}</div>
               </div>
             </div>
             <div className="stats-row" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 18 }}>
-              {[
-                { num: 4, suffix: "+", label: "Projects" },
-                { num: 2, suffix: "",  label: "Companies" },
-                { num: 10, suffix: "+", label: "Tech Stack" },
-                { num: 2, suffix: "+ yrs", label: "Experience" },
-              ].map((item, i) => (
+              {content.stats.map((item, i) => (
                 <div key={i} style={{ borderLeft: `2px solid ${T.borderStat}`, paddingLeft: 14 }}>
-                  <div style={{ fontFamily: "'Source Serif 4', serif", fontSize: 30, fontWeight: 700, color: T.accent, lineHeight: 1 }}>
+                  <div style={{ fontFamily: "'Lora', serif", fontSize: 30, fontWeight: 700, color: T.accent, lineHeight: 1 }}>
                     <Counter to={item.num} suffix={item.suffix} />
                   </div>
-                  <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 11, color: T.textVeryFaint, marginTop: 4 }}>{item.label}</div>
+                  <div style={{ fontFamily: "'Be Vietnam Pro', sans-serif", fontSize: 11, color: T.textVeryFaint, marginTop: 4 }}>{item.label}</div>
                 </div>
               ))}
             </div>
@@ -559,9 +709,9 @@ export default function Portfolio() {
       {/* EXPERIENCE */}
       <section id="experience" style={{ padding: "110px 40px", maxWidth: 1200, margin: "0 auto", position: "relative", zIndex: 1 }}>
         <FadeUp>
-          <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: T.accent, marginBottom: 14 }}>Career</div>
-          <h2 style={{ fontFamily: "'Source Serif 4', serif", fontSize: "clamp(30px, 4vw, 50px)", fontWeight: 700, color: T.textHeading, lineHeight: 1.15, marginTop: 0, marginBottom: 52 }}>
-            Work <em style={{ color: T.accent }}>Experience</em>
+          <div style={{ fontFamily: "'Be Vietnam Pro', sans-serif", fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", color: T.accent, marginBottom: 14 }}>{content.career}</div>
+          <h2 className="section-title" style={{ fontFamily: "'Lora', serif", fontSize: "clamp(30px, 4vw, 50px)", fontWeight: 700, color: T.textHeading, lineHeight: 1.2, marginTop: 0, marginBottom: 52 }}>
+            {content.experienceTitle}
           </h2>
         </FadeUp>
         <div style={{ maxWidth: 780 }}>
@@ -571,17 +721,17 @@ export default function Portfolio() {
                 <div style={{ position: "absolute", left: -8, top: 26, width: 13, height: 13, borderRadius: "50%", background: exp.color, border: `2px solid ${T.bg}`, boxShadow: `0 0 10px ${exp.color}55` }} />
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: 8, marginBottom: 10 }}>
                   <div>
-                    <div style={{ fontFamily: "'Source Serif 4', serif", fontSize: 20, fontWeight: 600, color: T.textHeading }}>{exp.role}</div>
-                    <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 13, color: exp.color, marginTop: 3 }}>{exp.company} · {exp.location}</div>
-                    {exp.note && <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 12, color: T.textVeryFaint, marginTop: 3, fontStyle: "italic" }}>{exp.note}</div>}
+                    <div style={{ fontFamily: "'Lora', serif", fontSize: 20, fontWeight: 600, color: T.textHeading }}>{isVietnamese ? exp.roleVi : exp.role}</div>
+                    <div style={{ fontFamily: "'Be Vietnam Pro', sans-serif", fontSize: 13, color: exp.color, marginTop: 3 }}>{exp.company} · {isVietnamese ? exp.locationVi : exp.location}</div>
+                    {(isVietnamese ? exp.noteVi : exp.note) && <div style={{ fontFamily: "'Be Vietnam Pro', sans-serif", fontSize: 12, color: T.textVeryFaint, marginTop: 3, fontStyle: "italic" }}>{isVietnamese ? exp.noteVi : exp.note}</div>}
                   </div>
-                  <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 11, color: T.textVeryFaint, background: T.bgPeriod, border: `1px solid ${T.borderPeriod}`, padding: "3px 11px", borderRadius: 100, whiteSpace: "nowrap" }}>
-                    {exp.period}
+                  <span style={{ fontFamily: "'Be Vietnam Pro', sans-serif", fontSize: 11, color: T.textVeryFaint, background: T.bgPeriod, border: `1px solid ${T.borderPeriod}`, padding: "3px 11px", borderRadius: 100, whiteSpace: "nowrap" }}>
+                    {isVietnamese ? exp.periodVi : exp.period}
                   </span>
                 </div>
                 <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: 5 }}>
-                  {exp.bullets.map((b, j) => (
-                    <li key={j} style={{ display: "flex", gap: 8, fontFamily: "'DM Sans', sans-serif", fontSize: 13.5, lineHeight: 1.7, color: T.textFaint }}>
+                  {(isVietnamese ? exp.bulletsVi : exp.bullets).map((b, j) => (
+                    <li key={j} style={{ display: "flex", gap: 8, fontFamily: "'Be Vietnam Pro', sans-serif", fontSize: 13, lineHeight: 1.8, color: T.textFaint }}>
                       <span style={{ color: exp.color, flexShrink: 0, marginTop: 2 }}>▸</span><span>{b}</span>
                     </li>
                   ))}
@@ -597,9 +747,9 @@ export default function Portfolio() {
       {/* SKILLS */}
       <section id="skills" style={{ padding: "110px 40px", maxWidth: 1200, margin: "0 auto", position: "relative", zIndex: 1 }}>
         <FadeUp>
-          <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: T.accent, marginBottom: 14 }}>Expertise</div>
-          <h2 style={{ fontFamily: "'Source Serif 4', serif", fontSize: "clamp(30px, 4vw, 50px)", fontWeight: 700, color: T.textHeading, lineHeight: 1.15, marginTop: 0, marginBottom: 44 }}>
-            Technical <em style={{ color: T.accent }}>Skills</em>
+          <div style={{ fontFamily: "'Be Vietnam Pro', sans-serif", fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", color: T.accent, marginBottom: 14 }}>{content.expertise}</div>
+          <h2 className="section-title" style={{ fontFamily: "'Lora', serif", fontSize: "clamp(30px, 4vw, 50px)", fontWeight: 700, color: T.textHeading, lineHeight: 1.2, marginTop: 0, marginBottom: 44 }}>
+            {content.skillsTitle}
           </h2>
         </FadeUp>
         <div className="skills-grid">
@@ -608,7 +758,7 @@ export default function Portfolio() {
               <div className="skill-card">
                 <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                   <span style={{ color: T.accent, flexShrink: 0 }}>{SKILL_ICONS[s.icon]}</span>
-                  <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 13, fontWeight: 500, color: T.textHeading, letterSpacing: "0.03em" }}>{s.label}</span>
+                  <span style={{ fontFamily: "'Be Vietnam Pro', sans-serif", fontSize: 13, fontWeight: 500, color: T.textHeading, letterSpacing: "0.02em" }}>{isVietnamese ? s.labelVi : s.label}</span>
                 </div>
                 <div className="skill-tags">
                   {s.tags.map((t, j) => <span key={j} className="tag-pill">{t}</span>)}
@@ -624,9 +774,9 @@ export default function Portfolio() {
       {/* PROJECTS */}
       <section id="projects" style={{ padding: "110px 40px", maxWidth: 1200, margin: "0 auto", position: "relative", zIndex: 1 }}>
         <FadeUp>
-          <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: T.accent, marginBottom: 14 }}>Work</div>
-          <h2 style={{ fontFamily: "'Source Serif 4', serif", fontSize: "clamp(30px, 4vw, 50px)", fontWeight: 700, color: T.textHeading, lineHeight: 1.15, marginTop: 0, marginBottom: 44 }}>
-            Selected <em style={{ color: T.accent }}>Projects</em>
+          <div style={{ fontFamily: "'Be Vietnam Pro', sans-serif", fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", color: T.accent, marginBottom: 14 }}>{content.work}</div>
+          <h2 className="section-title" style={{ fontFamily: "'Lora', serif", fontSize: "clamp(30px, 4vw, 50px)", fontWeight: 700, color: T.textHeading, lineHeight: 1.2, marginTop: 0, marginBottom: 44 }}>
+            {content.projectsTitle}
           </h2>
         </FadeUp>
         <div className="projects-grid">
@@ -637,16 +787,16 @@ export default function Portfolio() {
                   <span style={{ fontSize: 26 }}>{p.emoji}</span>
                   {p.link && (
                     <a href={p.link} target="_blank" rel="noreferrer"
-                      style={{ display: "flex", alignItems: "center", gap: 4, fontFamily: "'DM Sans', sans-serif", fontSize: 11, letterSpacing: "0.1em", textTransform: "uppercase", color: T.tagColor, textDecoration: "none" }}>
-                      Link <ExternalLink size={11} />
+                      style={{ display: "flex", alignItems: "center", gap: 4, fontFamily: "'Be Vietnam Pro', sans-serif", fontSize: 11, letterSpacing: "0.08em", textTransform: "uppercase", color: T.tagColor, textDecoration: "none" }}>
+                      {content.projectLink} <ExternalLink size={11} />
                     </a>
                   )}
                 </div>
-                <h3 style={{ fontFamily: "'Source Serif 4', serif", fontSize: 17.5, fontWeight: 600, color: T.textHeading, margin: 0, lineHeight: 1.35 }}>{p.name}</h3>
+                <h3 style={{ fontFamily: "'Lora', serif", fontSize: 17.5, fontWeight: 600, color: T.textHeading, margin: 0, lineHeight: 1.45 }}>{isVietnamese ? p.nameVi : p.name}</h3>
                 <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
                   {p.tags.map((t, j) => <span key={j} className="tag-pill">{t}</span>)}
                 </div>
-                <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 13.5, lineHeight: 1.78, color: T.textFaint, margin: 0, flexGrow: 1 }}>{p.desc}</p>
+                <p style={{ fontFamily: "'Be Vietnam Pro', sans-serif", fontSize: 13, lineHeight: 1.8, color: T.textFaint, margin: 0, flexGrow: 1 }}>{isVietnamese ? p.descVi : p.desc}</p>
               </div>
             </FadeUp>
           ))}
@@ -658,12 +808,12 @@ export default function Portfolio() {
       {/* CONTACT */}
       <section id="contact" style={{ padding: "110px 40px 120px", maxWidth: 760, margin: "0 auto", textAlign: "center", position: "relative", zIndex: 1 }}>
         <FadeUp>
-          <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: T.accent, marginBottom: 14 }}>Get In Touch</div>
-          <h2 style={{ fontFamily: "'Source Serif 4', serif", fontSize: "clamp(36px, 5vw, 62px)", fontWeight: 700, color: T.textHeading, lineHeight: 1.1, marginTop: 0, marginBottom: 18 }}>
-            Let's connect<br /><em style={{ color: T.accent }}>& collaborate.</em>
+          <div style={{ fontFamily: "'Be Vietnam Pro', sans-serif", fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", color: T.accent, marginBottom: 14 }}>{content.contactEyebrow}</div>
+          <h2 className="section-title" style={{ fontFamily: "'Lora', serif", fontSize: "clamp(36px, 5vw, 62px)", fontWeight: 700, color: T.textHeading, lineHeight: 1.15, marginTop: 0, marginBottom: 18 }}>
+            {content.contactTitle}
           </h2>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, lineHeight: 1.85, color: T.textFaint, marginBottom: 48, marginTop: 0 }}>
-            Open to DevOps roles, infrastructure consulting, and interesting cloud-native projects.
+          <p style={{ fontFamily: "'Be Vietnam Pro', sans-serif", fontSize: 15, lineHeight: 1.85, color: T.textFaint, marginBottom: 48, marginTop: 0 }}>
+            {content.contactText}
           </p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 10 }}>
             {[
@@ -685,9 +835,9 @@ export default function Portfolio() {
 
       {/* FOOTER */}
       <footer style={{ borderTop: `1px solid ${T.borderFooter}`, padding: "26px 40px", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12, position: "relative", zIndex: 1 }}>
-        <div style={{ fontFamily: "'Source Serif 4', serif", fontSize: 17, fontWeight: 700, color: T.textHeading }}>NVH<span style={{ color: T.accent }}>.</span></div>
-        <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 11, color: T.footerText, letterSpacing: "0.05em" }}>© 2025 Nguyễn Việt Hùng · Built with React & Framer Motion</div>
-        <a href="#home" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 11, color: T.footerLink, letterSpacing: "0.12em", textTransform: "uppercase", textDecoration: "none" }}>Back to top ↑</a>
+        <div style={{ fontFamily: "'Lora', serif", fontSize: 17, fontWeight: 700, color: T.textHeading }}>NVH<span style={{ color: T.accent }}>.</span></div>
+        <div style={{ fontFamily: "'Be Vietnam Pro', sans-serif", fontSize: 11, color: T.footerText, letterSpacing: "0.03em" }}>{content.footer}</div>
+        <a href="#home" style={{ fontFamily: "'Be Vietnam Pro', sans-serif", fontSize: 11, color: T.footerLink, letterSpacing: "0.08em", textTransform: "uppercase", textDecoration: "none" }}>{content.backToTop}</a>
       </footer>
     </div>
   );
