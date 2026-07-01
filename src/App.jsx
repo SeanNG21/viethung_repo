@@ -89,12 +89,6 @@ const PROJECTS = [
     desc: "A monitoring system built using eBPF to trace and visualize network packet processing inside the Linux kernel in real time, enabling low-overhead observability and deep inspection of kernel-level network behavior.",
   },
   {
-    name: "HRM360 System Infrastructure & Monitoring",
-    link: "https://hrm360.com.vn/",
-    tags: ["Infrastructure", "IDS/IPS", "Monitoring", "PostgreSQL"],
-    desc: "Complete server-side infrastructure for HRM360: centralized monitoring, alerting, database replication, security monitoring (IDS/IPS), and operational stability in a production environment.",
-  },
-  {
     name: "Autoscaling Databases in Kubernetes",
     link: null,
     tags: ["Kubernetes", "Autoscaling", "Cost Optimization", "Helm"],
